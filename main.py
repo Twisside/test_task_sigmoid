@@ -39,7 +39,8 @@ binary_columns = ["mainroad", "guestroom", "basement", "hotwaterheating", "airco
 for col in binary_columns:
     ds[col] = ds[col].map({"yes": 1, "no": 0})
 
-# ds['car_need'] = ds['parking'] * ds['mainroad']
+
+ds['location'] =  ds['prefarea'] * ds['mainroad']
 ds['rooms_floors'] = ds['bedrooms'] * ds['stories']
 ds['area_pref'] = ds['area'] * ds['prefarea']
 ds['bed_area'] = ds['bedrooms'] * ds['area']
